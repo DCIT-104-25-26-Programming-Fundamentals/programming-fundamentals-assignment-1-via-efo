@@ -35,7 +35,53 @@
 #   number, print an error message and stop.
 #
 
-# =============================================================================
-# YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
-# =============================================================================
+def calculate_sum(numbers):
+    total = 0
+    for z in numbers:
+        total = total + z
+    return total
 
+
+def calculate_average(numbers):
+    total = calculate_sum(numbers)
+    count = len(numbers)
+    return total / count
+
+
+def find_maximum(numbers):
+    maximum = numbers[0]
+    for z in numbers:
+        if z > maximum:
+            maximum = z
+    return maximum
+
+
+def find_minimum(numbers):
+    minimum = numbers[0]
+    for z in numbers:
+        if z < minimum:
+            minimum = z
+    return minimum
+
+
+def main():
+    n = int(input("How many numbers? "))
+
+    if n <= 0:
+        print("Error: N must be a positive integer.")
+        return
+
+    numbers = []
+    for i in range(n):
+        value = float(input(f"Enter number {i + 1}: "))
+        numbers.append(value)
+
+    print("\nResults:")
+    print(f"Sum:     {calculate_sum(numbers)}")
+    print(f"Average: {calculate_average(numbers)}")
+    print(f"Maximum: {find_maximum(numbers)}")
+    print(f"Minimum: {find_minimum(numbers)}")
+
+
+if __name__ == "__main__":
+    main()
